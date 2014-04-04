@@ -1,19 +1,50 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+	
+	jekyll: {
+		options: {
+			src: './_src',
+			config: './_config.yml',
+			layouts: './_src/_layouts',
+			drafts: './_src/_drafts',
+		},
+		prod: {
+			options: {
+				dest: './_public'
+			}
+		},
+		dev: {
+			options: {
+				dest: './_dev',
+				drafts: true,
+				future: true
+			}
+		}
+	},
 
     sass: {
       options: {
-        includePaths: ['bower_components/foundation/scss']
+        includePaths: ['bower_components/foundation/scss'],
+		imagePath: '/images',
       },
-      dist: {
+      prod: {
         options: {
           outputStyle: 'compressed'
         },
         files: {
-          'css/app.css': 'scss/app.scss'
+          './_public/css/app.css': './_src/scss/app.scss'
         }        
-      }
+      },
+	  dev: {
+		  options: {
+			  outputStyle: 'nested',
+			  sourceComments: 'normal'
+		  },
+		  files: {
+			  './_dev/css/app.css': './_src/scss/app.scss'
+		  }
+	  }
     },
 
     watch: {
@@ -27,8 +58,11 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-jekyll');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('build', ['sass']);
-  grunt.registerTask('default', ['build','watch']);
+  grunt.registerTask('publish', ['jekyll:prod','sass:prod'])
+  grunt.registerTask('build', ['jekyll:dev','sass:dev'])
+  grunt.registerTask('serve', ['build','watch']);
+  grunt.registerTask('default', ['build']);
 }
