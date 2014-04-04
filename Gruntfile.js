@@ -37,7 +37,7 @@ module.exports = function(grunt) {
       },
       test: {
   	    src: ['_src/js/**/*.js'],
-  	    dest: 'libs/latest.js'
+  	    dest: 'libs/latest/latest.js'
       }
 	},
 	
@@ -57,7 +57,7 @@ module.exports = function(grunt) {
 	  },
 	  test: {
 	    files: {
-	      'libs/latest.min.js': ['<%= concat.test.dest %>']
+	      'libs/latest/latest.min.js': ['<%= concat.test.dest %>']
 	    }
 	  }
 	},
