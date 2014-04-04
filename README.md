@@ -53,7 +53,6 @@ to publish to _public (minified JavaScript and compressed CSS).
 
 These things are still a work in progress and will be completed as time allows.
 
-  * Add JavaScript minifying through Uglify
-  * Add JavaScript validation through JSHint
-  * Add UnitTests through QUnit
-  * Make it so that grunt watch works correctly with Jekyll's serve for live development.
+  * Add copy task through grunt-contrib-copy
+  * Copy jquery and foundation CSS and JS files for use, rather than using them directly
+  * Make it so that grunt watch works correctly with Jekyll's serve for live development
