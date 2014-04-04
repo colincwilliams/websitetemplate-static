@@ -37,4 +37,23 @@ to publish to _public (minified JavaScript and compressed CSS).
     * `scss/_settings.scss`: Foundation configuration settings go in here
     * `scss/app.scss`: Application styles go here
   * `_dev`: Where the output of the site build occurs during development, *without* minified JS or compressed CSS for debugging.
-  * `_public`: Where the output of the site build occurs for final publishing. 
+  * `_public`: Where the output of the site build occurs for final publishing.
+
+## Grunt Plugins Used
+
+  * [grunt-jekyll](https://github.com/dannygarcia/grunt-jekyll)
+  * [grunt-sass](https://github.com/sindresorhus/grunt-sass)
+  * [grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify)
+  * [grunt-contrib-qunit](https://github.com/gruntjs/grunt-contrib-qunit)
+  * [grunt-contrib-concat](https://github.com/gruntjs/grunt-contrib-concat)
+  * [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint)
+  * [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch)
+
+## Todo
+
+These things are still a work in progress and will be completed as time allows.
+
+  * Add JavaScript minifying through Uglify
+  * Add JavaScript validation through JSHint
+  * Add UnitTests through QUnit
+  * Make it so that grunt watch works correctly with Jekyll's serve for live development.
