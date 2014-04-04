@@ -2,7 +2,7 @@ source:      .
 plugins:     ./_plugins
 layouts:     ./_layouts
 include:     ['.htaccess']
-exclude:     ['scss']
+exclude:     ['scss','js']
 keep_files:  ['.git','.svn']
 gems:        []
 timezone:    nil

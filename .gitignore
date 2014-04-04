@@ -1,5 +1,6 @@
 *.DS_Store
 /_dev/*
 /_public/*
+/libs/latest/*
 /bower_components/*
 /node_modules/*
