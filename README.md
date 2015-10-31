@@ -1,3 +1,5 @@
+**WARNING: This is no longer in maintenance. Feel free to use and/or extend, but use at your own risk.**
+
 # Website Template - Static
 
 This is a template to kick-start a statically generated website utilizing Foundation 5, Grunt and Jekyll.
